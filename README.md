@@ -96,6 +96,6 @@ Setup a XDC private network with four Masternodes.
 
 *Run script:*
 
-    ./SetupPrivateNode.sh
+    ./setup.sh
 
 
