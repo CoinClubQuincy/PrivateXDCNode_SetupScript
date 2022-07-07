@@ -27,7 +27,7 @@ Setup a XDC private network with four Masternodes.
 
     git clone https://github.com/QCloud-DevOps/PrivateXDCNode_SetupScript.git
 
-***Edit Yaml File:***
+***Edit config.yml File:***
 
     #Set chain name EX:Leo
     Chain_Name: "Leo"
@@ -98,7 +98,7 @@ Setup a XDC private network with four Masternodes.
       - "0x0000000000000000000000000000000000000000"
       - "0x0000000000000000000000000000000000000000"
 
-***Run script:***
+***Run script.sh:***
 
     ./setup.sh
 
