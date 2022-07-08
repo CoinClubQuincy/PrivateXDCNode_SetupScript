@@ -14,20 +14,27 @@ class NodeSetup:
             doc = yaml.safe_load(stream)
             try:
                 for signers, value in doc.items():
-                    if(isinstance(value, list)==True):
+                    if(signers == "Nodes" ):
+                        print("break")
+                        break                        
+                    elif(isinstance(value, list)==True):
                         for i in value:
-                            subprocess.run([i])
-                            #print(i)
+                            #subprocess.run([i])
+                            print(i)
                         #enter key to continue to next item
                         Key.enter
                     else:
-                        subprocess.run([doc[value]])
-                        #print(value)
+                        #subprocess.run([doc[value]])
+                        print(value)
             except yaml.YAMLError as exc:
                 print(exc)
+    
+    def establishNodes(self):
+        print("listing Nodes")
 
     def shellScript(self,_location):
         self.readConfig(_location)
+        self.establishNodes()
     
 if __name__ == "__main__":
     NodeSetup(sys.argv[0])
