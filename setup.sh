@@ -1,3 +1,8 @@
+# install python and python dpendancies
+sudo apt-get update
+sudo apt-get install python3.6
+
+pip3 install pynput
 #install Go lang
 sudo wget https://go.dev/dl/go1.18.linux-amd64.tar.gz
 
