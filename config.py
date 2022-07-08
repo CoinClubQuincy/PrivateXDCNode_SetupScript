@@ -2,15 +2,16 @@
 import yaml
 import subprocess
 from pynput.keyboard import Key, Controller
-
+import sys
 class NodeSetup:
-    def __init__(self):
+    def __init__(self,location):
         print("test")
-        self.shellScript()
+        self.location = location
+        self.shellScript(self.location)
 
-    def readConfig(self):
+    def readConfig(self,_file_location):
         print("reading config file")
-        with open("config.yml", "r") as stream:
+        with open("%s/config.yml" % (_file_location[:-9]), "r") as stream:
             doc = yaml.safe_load(stream)
             try:
                 for signers, value in doc.items():
@@ -26,10 +27,9 @@ class NodeSetup:
             except yaml.YAMLError as exc:
                 print(exc)
 
-    def shellScript(self):
+    def shellScript(self,_location):
         print("execute shell")
-        subprocess.run(['ls'])
-        self.readConfig()
+        self.readConfig(_location)
     
 if __name__ == "__main__":
-    NodeSetup()
+    NodeSetup(sys.argv[0])

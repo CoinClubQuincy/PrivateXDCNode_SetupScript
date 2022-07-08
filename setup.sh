@@ -1,4 +1,6 @@
 # install python and python dpendancies
+location=$(pwd)
+
 sudo apt-get update
 sudo apt update
 sudo apt upgrade
@@ -48,7 +50,7 @@ rm -rf genesis.json
 alias puppeth=/home/ubuntu/XDPoSChain/build/bin/puppeth
 puppeth
 #run python script to set configuration parameters
-cd ../
-Python3 config.py
+
+Python3 $location/config.py $location
 
 
