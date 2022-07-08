@@ -5,7 +5,6 @@ from pynput.keyboard import Key, Controller
 import sys
 class NodeSetup:
     def __init__(self,location):
-        print("test")
         self.location = location
         self.shellScript(self.location)
 
@@ -17,18 +16,17 @@ class NodeSetup:
                 for signers, value in doc.items():
                     if(isinstance(value, list)==True):
                         for i in value:
-                            ##subprocess.run([i])
-                            print(i)
+                            subprocess.run([i])
+                            #print(i)
                         #enter key to continue to next item
                         Key.enter
                     else:
-                        #subprocess.run([doc[value]])
-                        print(value)
+                        subprocess.run([doc[value]])
+                        #print(value)
             except yaml.YAMLError as exc:
                 print(exc)
 
     def shellScript(self,_location):
-        print("execute shell")
         self.readConfig(_location)
     
 if __name__ == "__main__":
