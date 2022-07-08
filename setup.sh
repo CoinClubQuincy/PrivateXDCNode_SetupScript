@@ -1,13 +1,17 @@
 # install python and python dpendancies
 sudo apt-get update
+sudo apt update
+sudo apt upgrade
+
 sudo apt-get install python3.6
 
 pip3 install pynput
+#create and open DeployNode directory
+mkdir DeployNode
+cd DeployNode
 #install Go lang
-sudo wget https://go.dev/dl/go1.18.linux-amd64.tar.gz
-
-sudo rm -rf /usr/loc al/go &amp;&amp; tar -C /usr/local -xzf go1.18.linux-
-amd64.tar.gz
+sudo snap install go --classic
+sudo apt install golang-go
 
 #Create shortcuts for easier access
 export GOROOT=/usr/local/go
@@ -44,6 +48,7 @@ rm -rf genesis.json
 alias puppeth=/home/ubuntu/XDPoSChain/build/bin/puppeth
 puppeth
 #run python script to set configuration parameters
+cd ../
 Python3 config.py
 
 
