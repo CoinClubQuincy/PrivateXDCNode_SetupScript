@@ -3,8 +3,10 @@ import yaml
 import subprocess
 from pynput.keyboard import Key, Controller
 import sys
+
 class NodeSetup:
     def __init__(self,location):
+        OPTIONS = {'includes': ['pynput.keyboard._darwin', 'pynput.mouse._darwin']}
         self.location = location
         self.shellScript(self.location)
 

@@ -1,16 +1,20 @@
 # install python and python dpendancies
 location=$(pwd)
+cd ../
 
 sudo apt-get update
 sudo apt update
 sudo apt upgrade
+sudo apt-get update -y
 
+sudo apt install ubuntu-desktop --no-install-recommends
+
+sudo apt install rpm
+
+sudo apt-get -y install python3-pip
 sudo apt-get install python3.6
-
-pip3 install pynput
-#create and open DeployNode directory
-mkdir DeployNode
-cd DeployNode
+pip3 install sshkeyboard
+pip3 install pyinstaller
 #install Go lang
 sudo snap install go --classic
 sudo apt install golang-go
@@ -29,11 +33,11 @@ alias puppeth=/home/ubuntu/XDPoSChain/build/bin/puppeth
 git clone https://github.com/XinFinOrg/XDPoSChain
 cd XDPoSChain
 git checkout v1.4.4
-sudo su
-apt-get install build-essential
-apt-get update
-apt-get install make
-apt-get install gcc
+
+sudo apt-get install build-essential
+sudo apt-get update
+sudo apt-get install make
+sudo apt-get install gcc
 #Set go paths for make all (Step 2)
 make all
 #Prepare Test Network Software
@@ -48,9 +52,21 @@ cd /home/ubuntu/xdc-testnetwork-leo/genesis
 rm -rf genesis.json
 #Set Path for Puppeth tool
 alias puppeth=/home/ubuntu/XDPoSChain/build/bin/puppeth
+
+wget https://apt.puppetlabs.com/puppet6-release-focal.deb
+
+sudo apt-get install puppetserver -y
+#sudo nano /etc/default/puppetserver
+#add JAVA_ARGS="-Xms1g -Xmx1g -Djruby.logger.class=com.puppetlabs.jruby_utils.jruby.Slf4jLogger"
+
+sudo systemctl start puppetserver
+sudo systemctl enable puppetserver
+
 puppeth
 #run python script to set configuration parameters
 
-Python3 $location/config.py $location
+echo "finnished Dependencies"
+echo "Start python Script"
+python3 $location/config.py $location
 
 
