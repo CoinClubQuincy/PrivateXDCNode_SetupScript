@@ -25,6 +25,7 @@ Setup a XDC private network with four Masternodes.
 ## Setup Configuration
 ***Download git repository*** 
 
+    cd /home/ubuntu/
     git clone https://github.com/QCloud-DevOps/PrivateXDCNode_SetupScript.git
 
 ***Edit config.yml File:***
