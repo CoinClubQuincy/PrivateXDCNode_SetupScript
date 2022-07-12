@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 import yaml
 import subprocess
-from pynput.keyboard import Key, Controller
 import sys
 
 class NodeSetup:
@@ -24,7 +23,7 @@ class NodeSetup:
                             #subprocess.run([i])
                             print(i)
                         #enter key to continue to next item
-                        Key.enter
+                        subprocess.run("")
                     else:
                         #subprocess.run([doc[value]])
                         print(value)

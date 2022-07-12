@@ -13,7 +13,7 @@ sudo apt install rpm
 
 sudo apt-get -y install python3-pip
 sudo apt-get install python3.6
-pip3 install sshkeyboard
+
 pip3 install pyinstaller
 #install Go lang
 sudo snap install go --classic
