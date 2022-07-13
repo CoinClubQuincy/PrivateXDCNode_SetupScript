@@ -33,13 +33,6 @@ export GOPATH=/home/ubuntu/go
 export PATH=$PATH:/usr/local/go/bin]
 export PATH="${GOROOT}/bin:${PATH}"
 
-#XDC Path
-alias XDC=/home/ubuntu/XDPoSChain/build/bin/XDC
-#Bootnode
-alias bootnode=/home/ubuntu/XDPoSChain/build/bin/bootnode
-#Puppeth
-alias puppeth=/home/ubuntu/XDPoSChain/build/bin/puppeth
-
 git clone https://github.com/XinFinOrg/XDPoSChain 
 cd XDPoSChain
 git checkout v1.4.4
@@ -60,14 +53,26 @@ cd xdc-testnetwork-leo
 cd /home/ubuntu/xdc-testnetwork-leo/genesis
 #Delete the existing Genesis file
 rm -rf genesis.json
-#Set Path for Puppeth tool
-alias puppeth=/home/ubuntu/XDPoSChain/build/bin/puppeth
 
+echo $puppeth
 #run python script to set configuration parameters
-
 echo "finnished Dependencies"
 echo "Start python Script"
 
 python3 $location/config.py $location
+
+
+alias bootnode=/home/ubuntu/XDPoSChain/build/bin/bootnode
+#bootnode -genkey bootnode.key
+
+#cp info
+#bootnode -nodekey ./bootnode.key
+
+#Note - Make sure to add Public ip in enode-id (For connecting two different location nodes you should have to go with aws public ip)
+
+echo "Node Setup Completed"
+
+
+
 
 

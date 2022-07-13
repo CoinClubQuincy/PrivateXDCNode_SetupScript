@@ -1,4 +1,4 @@
-#Set chain name EX:Leo
+#Set chain name EX:Leo (no spaces or hyphens, please)
 Chain_Name: "Leo"
 
 #Configure Chain
