@@ -7,8 +7,9 @@ class NodeSetup:
     def __init__(self,location):
         OPTIONS = {'includes': ['pynput.keyboard._darwin', 'pynput.mouse._darwin']}
         self.location = location
+        subprocess.run("puppeth")
         self.shellScript(self.location)
-
+        
     def readConfig(self,_file_location):
         print("reading config file")
         with open("%s/config.yml" % (_file_location[:-9]), "r") as stream:
@@ -20,13 +21,11 @@ class NodeSetup:
                         break                        
                     elif(isinstance(value, list)==True):
                         for i in value:
-                            #subprocess.run([i])
-                            print(i)
-                        #enter key to continue to next item
-                        subprocess.run("")
+                            subprocess.run([i])
+                            #print(i)
                     else:
-                        #subprocess.run([doc[value]])
-                        print(value)
+                        subprocess.run([doc[value]])
+                        #print(value)
             except yaml.YAMLError as exc:
                 print(exc)
     
