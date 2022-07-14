@@ -9,7 +9,8 @@ class NodeSetup:
         subprocess.run("alias XDC=/home/ubuntu/XDPoSChain/build/bin/XDC", shell=True) #XDC Path
         subprocess.run("alias bootnode=/home/ubuntu/XDPoSChain/build/bin/bootnode", shell=True)#Bootnode
         subprocess.run("alias puppeth=/home/ubuntu/XDPoSChain/build/bin/puppeth", shell=True) #Puppeth
-    
+        subprocess.run("alias bootnode=/home/ubuntu/XDPoSChain/build/bin/bootnode",shell=True) #Boot node
+
         subprocess.run("/home/ubuntu/XDPoSChain/build/bin/puppeth",stdin=None, input=None, stdout=None,
                                 stderr=None, capture_output=False, shell=False, 
                                 cwd=None, timeout=None, check=False, encoding=None, 
@@ -27,11 +28,11 @@ class NodeSetup:
                         break                        
                     elif(isinstance(value, list)==True):
                         for i in value:
-                            subprocess.run([i],shell=False)
-                            #print(i)
+                            #subprocess.run([i],shell=False)
+                            print(i)
                     else:
-                        subprocess.run(doc[value],shell=False)
-                        #print(value)
+                        #subprocess.run(value,shell=False)
+                        print(value)
             except yaml.YAMLError as exc:
                 print(exc)
     

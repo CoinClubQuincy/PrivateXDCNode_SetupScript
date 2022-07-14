@@ -6,7 +6,7 @@ Chain_Name: "Leo"
 #2.Configure New Genesis 
 #3.Track new remote server 
 #4.Deploy network Components 
-Configure_New_Genesis: 1
+Configure_New_Genesis: 2
 
 #Choose Consensus Engine
 #1.Ethash - proof of work
@@ -21,13 +21,12 @@ BlockTime: 2
 EpochReward: 2000
 
 #Set addresses to be initial masternodes
-MasterNode: "0x0000000000000000000000000000000000000000"
+MasterNode: "xdc45B110d2F1CC8381D31661F906A9f0F3b084C657" 
 
 #Enter the signers address.
 signers: 
-  - "0x0000000000000000000000000000000000000000"
-  - "0x0000000000000000000000000000000000000000"
-  - "0x0000000000000000000000000000000000000000"
+  - "xdcd5ec377df0fa2e44fa20e0b8e3b4aa999629b803"
+  - "xdce4C4FeBE1Cb34C3490167c163C9ED92049B32B5c"
   
 #Set the number of blocks of each epoch (default 900).
 blockPerEpoch: 900
@@ -35,25 +34,24 @@ blockPerEpoch: 900
 #Set gap -How many blocks are needed to prepare a new masternodes set before checkpoint?)
 setGap: 5
 #foundation address in which you hold the private key
-foundationAddress: "0x0000000000000000000000000000000000000000"
+foundationAddress: "xdc45B110d2F1CC8381D31661F906A9f0F3b084C657"
 
 #accounts with which you control private keys to unlock the MultiSig wallet
 MultiSig-Address:
-  - "0x0000000000000000000000000000000000000000"
-  - "0x0000000000000000000000000000000000000000"
-  - "0x0000000000000000000000000000000000000000"
+  - "xdc45B110d2F1CC8381D31661F906A9f0F3b084C657"
+  - "xdcd5ec377df0fa2e44fa20e0b8e3b4aa999629b803"
+  - "xdce4C4FeBE1Cb34C3490167c163C9ED92049B32B5c"
 
 #requires to confirm tx for multisig
 walletConfirmations: 2
 
 #Enter swap wallet address for fund 55 million XDC
-swapWallet: "0x0000000000000000000000000000000000000000"
+swapWallet: "xdc45B110d2F1CC8381D31661F906A9f0F3b084C657"
 
 #Enter the address which needs to be pre-funded
 preFund:
-  - "0x0000000000000000000000000000000000000000"
-  - "0x0000000000000000000000000000000000000000"
-  - "0x0000000000000000000000000000000000000000"
+  - "xdcd5ec377df0fa2e44fa20e0b8e3b4aa999629b803"
+  - "xdce4C4FeBE1Cb34C3490167c163C9ED92049B32B5c"
   
 #Enter the network ID - 72
 networkID: 72
@@ -64,5 +62,5 @@ Nodes:
   - "0x0000000000000000000000000000000000000000"
   - "0x0000000000000000000000000000000000000000"
   - "0x0000000000000000000000000000000000000000"
-  - "0x0000000000000000000000000000000000000000"
-  - "0x0000000000000000000000000000000000000000"
+
+Total_Node: 4 #(required)

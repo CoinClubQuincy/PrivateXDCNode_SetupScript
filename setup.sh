@@ -63,10 +63,9 @@ python3 $location/config.py $location
 
 
 alias bootnode=/home/ubuntu/XDPoSChain/build/bin/bootnode
-#bootnode -genkey bootnode.key
 
-#cp info
-#bootnode -nodekey ./bootnode.key
+bootnode -genkey bootnode.key
+bootnode -nodekey ./bootnode.key
 
 #Note - Make sure to add Public ip in enode-id (For connecting two different location nodes you should have to go with aws public ip)
 
