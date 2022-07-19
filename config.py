@@ -1,20 +1,19 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 import yaml
 import subprocess
 import sys
 
+total = ""
 class NodeSetup:
     def __init__(self,location):
         self.location = location
+
+        subprocess.run("alias bootnode=/home/ubuntu/XDPoSChain/build/bin/bootnode", shell=True) #Bootnode Path
         subprocess.run("alias XDC=/home/ubuntu/XDPoSChain/build/bin/XDC", shell=True) #XDC Path
         subprocess.run("alias bootnode=/home/ubuntu/XDPoSChain/build/bin/bootnode", shell=True)#Bootnode
         subprocess.run("alias puppeth=/home/ubuntu/XDPoSChain/build/bin/puppeth", shell=True) #Puppeth
         subprocess.run("alias bootnode=/home/ubuntu/XDPoSChain/build/bin/bootnode",shell=True) #Boot node
 
-        subprocess.run("/home/ubuntu/XDPoSChain/build/bin/puppeth",stdin=None, input=None, stdout=None,
-                                stderr=None, capture_output=False, shell=False, 
-                                cwd=None, timeout=None, check=False, encoding=None, 
-                                errors=None, text=None, env=None, universal_newlines=None)
         self.shellScript(self.location)
         
     def readConfig(self,_file_location):
@@ -23,9 +22,12 @@ class NodeSetup:
             doc = yaml.safe_load(stream)
             try:
                 for signers, value in doc.items():
-                    if(signers == "Nodes" ):
+                    if(signers == "Total_Nodes" ):
                         print("break")
-                        break                        
+                        global total 
+                        total = value
+                        break
+
                     elif(isinstance(value, list)==True):
                         for i in value:
                             #subprocess.run([i],shell=False)
@@ -33,15 +35,26 @@ class NodeSetup:
                     else:
                         #subprocess.run(value,shell=False)
                         print(value)
+                
             except yaml.YAMLError as exc:
                 print(exc)
     
     def establishNodes(self):
-        print("listing Nodes")
+        return total
 
     def shellScript(self,_location):
         self.readConfig(_location)
-        self.establishNodes()
     
+
+genesisFile = {
+    "name": "sathiyajith",
+    "rollno": 56,
+    "cgpa": 8.6,
+    "phonenumber": "9976770500"
+}
+
+
+
 if __name__ == "__main__":
-    NodeSetup(sys.argv[0])
+    node=NodeSetup(sys.argv[0])
+    node.establishNodes()
