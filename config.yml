@@ -56,6 +56,8 @@ preFund:
 #Enter the network ID - 72
 networkID: 72
 
+Total_Nodes: 4 #(required)
+
 #add Nodes to subnet
 Nodes:
   - "0x0000000000000000000000000000000000000000"
@@ -63,4 +65,3 @@ Nodes:
   - "0x0000000000000000000000000000000000000000"
   - "0x0000000000000000000000000000000000000000"
 
-Total_Node: 4 #(required)
