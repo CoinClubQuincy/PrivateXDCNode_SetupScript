@@ -27,7 +27,7 @@ Setup a XDC private network with four Masternodes.
 
     cd /home/ubuntu/
     git clone https://github.com/CoinClubQuincy/PrivateXDCNode_SetupScript.git
-    cd PrivateMasterNode_SetupScript/ && chmod +x setup.sh && ./setup.sh
+    cd PrivateXDCNode_SetupScript/ && chmod +x setup.sh && ./setup.sh
 
 ***Edit config.yml File:***
 
