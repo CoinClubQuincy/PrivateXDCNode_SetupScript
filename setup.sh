@@ -71,6 +71,8 @@ python3 $location/config.py
 echo "python finnished"
 echo "$nodeAmmount"
 
+puppeth
+
 bootnode -genkey bootnode.key
 bootnode -nodekey ./bootnode.key
 
