@@ -3,7 +3,7 @@ import yaml
 import subprocess
 import sys
 
-total = ""
+total = 4
 class NodeSetup:
     def __init__(self,location):
         self.location = location
