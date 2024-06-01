@@ -71,6 +71,7 @@ python3 $location/config.py
 echo "python finnished"
 echo "$nodeAmmount"
 
+geth account new --datadir "./data"
 puppeth
 
 bootnode -genkey bootnode.key
