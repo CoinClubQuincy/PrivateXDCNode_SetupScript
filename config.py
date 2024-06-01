@@ -7,6 +7,7 @@ total = 4
 class NodeSetup:
     def __init__(self,location):
         self.location = location
+        print("Setup Node")
 
         subprocess.run("alias bootnode=/home/ubuntu/XDPoSChain/build/bin/bootnode", shell=True) #Bootnode Path
         subprocess.run("alias XDC=/home/ubuntu/XDPoSChain/build/bin/XDC", shell=True) #XDC Path
