@@ -62,11 +62,11 @@ rm -rf genesis.json
 
 #run python script to set configuration parameters
 echo "finnished Dependencies"
-echo "Start python Script"
+echo "Skip python Script"
 
-echo "2/3rd complete: BREAK: still testing finnish manually until finnished"
-break ## still testing do manually untill finnished
-nodeAmmount = $(python3 $location/config.py $location)
+#echo "2/3rd complete: BREAK: still testing finnish manually until finnished"
+#break ## still testing do manually untill finnished
+nodeAmmount = 4 #$(python3 $location/config.py $location)
 echo "$nodeAmmount"
 
 bootnode -genkey bootnode.key
