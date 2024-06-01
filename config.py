@@ -14,7 +14,7 @@ class NodeSetup:
         subprocess.run("alias puppeth=/home/ubuntu/XDPoSChain/build/bin/puppeth", shell=True) #Puppeth
         subprocess.run("alias bootnode=/home/ubuntu/XDPoSChain/build/bin/bootnode",shell=True) #Boot node
 
-        self.shellScript(self.location)
+        #self.shellScript(self.location)
         
     def readConfig(self,_file_location):
         print("reading config file")
